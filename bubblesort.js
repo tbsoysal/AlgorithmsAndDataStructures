@@ -1,24 +1,19 @@
+// Bubble Sort Algorithm
 const bubbleSort = (arr) => {
-  // get length of the array minus 1 (loop index starts from 0 thats why minus 1)
-  const n = arr.length - 1;
-  // this outter loop ensures checking the array items again and again
-  for(let i = 0; i < n; i++){
-    // this variables will check if array is already sorted
-    let swapped = false;
-    // this loop ensures checking all the elements and swaps if needed 
-    for(let j = 0; j < n - i; j++){
-      if (arr[j] > arr[j+1]){
-        [arr[j], arr[j+1]] = [arr[j+1], arr[j]];
-        swapped = true;
+  const n = arr.length - 1; // Get the length of the array minus one
+  for(let i = 0; i < n; i++){ // Outer loop to control the number of passes
+    let swapped = false; // Flag to check if any swapping happened in the inner loop
+    for(let j = 0; j < n - i; j++){ // Inner loop to compare adjacent elements
+      if (arr[j] > arr[j+1]){ // If the current element is greater than the next element
+        [arr[j], arr[j+1]] = [arr[j+1], arr[j]]; // Swap the elements
+        swapped = true; // Set the flag to true indicating a swap happened
       }
     }
-    // if already sorted exit loop
-    if (!swapped)
-      break;
+    if (!swapped) // If no swapping happened, the array is already sorted
+      break; // Break out of the loop
   }
-  // return sorted array
-  return arr;
+  return arr; // Return the sorted array
 }
 
-const arr = [5, 8, 4, 2, 9, 3];
-console.log(bubbleSort(arr));
+const arr = [5, 8, 4, 2, 9, 3]; // Sample array to be sorted
+console.log(bubbleSort(arr)); // Output the sorted array
