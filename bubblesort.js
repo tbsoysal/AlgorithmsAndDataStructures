@@ -1,6 +1,6 @@
 // Bubble Sort Algorithm
 const bubbleSort = (arr) => {
-  const n = arr.length - 1; // Get the length of the array minus one
+  const n = arr.length; // Get the length of the array minus one
   for(let i = 0; i < n; i++){ // Outer loop to control the number of passes
     let swapped = false; // Flag to check if any swapping happened in the inner loop
     for(let j = 0; j < n - i; j++){ // Inner loop to compare adjacent elements
